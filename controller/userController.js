@@ -25,7 +25,11 @@ const createUser = async(req,res) =>{
 }
 
 const getUsers = async(req,res) =>{
-    const users = await prisma.user.findMany()
+    const users = await prisma.user.findMany({
+        include:{
+            post:true
+        }
+    })
     return res.status(200).json({
         data:users
     })

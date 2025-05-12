@@ -1,3 +1,4 @@
 const user = require("./user")
-
-module.exports = [user]
+const post = require("./post")
+const comment = require("./comment")
+module.exports = [user,post,comment]
